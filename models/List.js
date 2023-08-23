@@ -9,7 +9,10 @@ const ListSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    tasks : [TaskSchema]
+    tasks : [TaskSchema.schema],
+},
+{
+    versionKey: false
 });
 
 module.exports = mongoose.model('List', ListSchema);
